@@ -1,0 +1,16 @@
+name: Actions workflow
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple PR Code
+        id: greet
+        uses: actions/github-action-pipeline@28d398f1543a3de74b49abc6a500260b1c0658ab
+        with:
+          who-to-greet: Calvin
+
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"
