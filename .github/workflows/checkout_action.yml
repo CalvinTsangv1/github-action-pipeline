@@ -14,10 +14,9 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
-          eval `ssh-agent -s`
-          ssh-add
-          ssh-add ~/.ssh/id_rsa
-          git clone git@github:$GITHUB_REPOSITORY
+          #eval `ssh-agent -s`
+          #ssh-add
+          #git clone git@github:$GITHUB_REPOSITORY
           git checkout $GITHUB_SHA
 
       - name: Checkout
