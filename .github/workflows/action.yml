@@ -39,8 +39,9 @@ jobs:
       #Run yarn / npm install using the runners shell
       - name:  Install yarn and npm
         run: |
+
           node -v
-          npm - v
+          npm -v
       
       - name: python command
         run: |
