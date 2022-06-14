@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Simple PR Code
         id: greet
-        uses: CavlinTsang/github-action-pipeline@28d398f1543a3de74b49abc6a500260b1c0658ab
+        uses: actions/hello-world-javascript-action@v1
         with:
-          who-to-greet: Calvin
+          who-to-greet: John
 
       - name: Log Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
