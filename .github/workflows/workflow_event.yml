@@ -1,4 +1,4 @@
-name: Actions workflow
+name: Event Action Workflow
 
 on: 
   push:
