@@ -1,11 +1,17 @@
 name: GitLab Command Line
 
+#description:
+#pipeline build only on dev branch or pull request merge to dev branch
+#1.build app
+#2.test app
+#3.deploy app to dev env
+
 on:
   push:
     branches:
       - dev
     pull_request:
-      types: [closed, assigned, opened, reopened]
+      types: [closed]
 
 permissions:
   contents: read
@@ -29,10 +35,24 @@ jobs:
           node-version: 16.13.x
           cache: npm
 
+      #npm install package dependencies from package-lock.json, and generate node_modules folder
       - name: Install
+        id: install
         run: npm ci
 
-      - name: Simple JS Code
-        uses: actions/hello-world-javascript-action@v1
-        with:
-          who-to-greet: John
+      #npm build application, is grabbed from src folder which store source code. After build, it is generated dist folder
+      - name: Build
+        id: build
+        run: npm run build
+
+      - name: Run Test
+        run: npm run test
+
+      - name: Pipeline successful
+        run: |
+          echo "install duration -- ${{steps.install.outputs.time}}"
+          echo "build duration -- ${{ steps.build.outputs.time }}"
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
