@@ -1,6 +1,6 @@
 name: Checkout Action Workflow
 
-on: [push]
+on: [checkout]
 
 jobs:
   run-github-actions:
