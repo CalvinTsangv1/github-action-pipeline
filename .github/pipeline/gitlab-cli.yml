@@ -1,0 +1,48 @@
+name: GitLab Command Line
+
+stages:
+  -build
+  -deploy
+  -test
+  -prod-deploy
+
+build-for-testing:
+  stage: build
+  only:
+    - develop
+    - master
+  script:
+    - echo "build for testing"
+
+prod-build:
+  stage: build
+  only:
+    - production
+  script:
+    - echo "build for production"
+
+deploy-for-testing:
+  stage: deploy
+  only:
+    - develop
+    - master
+    - production
+  script:
+    - echo "deploy for testing"
+
+testing:
+  stage: test
+  only:
+    - develop
+    - master
+    - production
+  script:
+    - echo "auto testing"
+
+prod-deploy:
+  stage: prod-deploy
+  only:
+    - production
+  script:
+    - echo "deploy to production server"
+  when: manual
