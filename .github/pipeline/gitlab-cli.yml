@@ -1,48 +1,38 @@
 name: GitLab Command Line
 
-stages:
-  -build
-  -deploy
-  -test
-  -prod-deploy
+on:
+  push:
+    branches:
+      - dev
+    pull_request:
+      types: [closed, assigned, opened, reopened]
 
-build-for-testing:
-  stage: build
-  only:
-    - develop
-    - master
-  script:
-    - echo "build for testing"
+permissions:
+  contents: read
+  pull-requests: read
 
-prod-build:
-  stage: build
-  only:
-    - production
-  script:
-    - echo "build for production"
+# This allows a subsequently queued workflow run to interrupt previous runs
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
 
-deploy-for-testing:
-  stage: deploy
-  only:
-    - develop
-    - master
-    - production
-  script:
-    - echo "deploy for testing"
+jobs:
+  dev-build-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.x
+          cache: npm
 
-testing:
-  stage: test
-  only:
-    - develop
-    - master
-    - production
-  script:
-    - echo "auto testing"
+      - name: Install
+        run: npm ci
 
-prod-deploy:
-  stage: prod-deploy
-  only:
-    - production
-  script:
-    - echo "deploy to production server"
-  when: manual
+      - name: Simple JS Code
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: John
