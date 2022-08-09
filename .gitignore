@@ -39,3 +39,4 @@ lerna-debug.log*
 dump.rdb
 
 mongocryptd.pid
+yarn.lock
