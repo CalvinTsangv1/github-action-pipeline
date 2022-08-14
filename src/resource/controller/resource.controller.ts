@@ -1,8 +1,15 @@
-import { Controller } from "@nestjs/common";
+import { Controller, Get } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 
 @Controller('resources')
 @ApiTags('resource')
 export class ResourceController {
-    constructor() {}
+    constructor() {
+
+    }
+
+    @Get()
+    public async testAPI() {
+        console.log("test api");
+    }
 }
