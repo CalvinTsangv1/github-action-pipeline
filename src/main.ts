@@ -1,7 +1,7 @@
 import { AppModule } from "./app.module";
 import { NestFactory, Reflector } from "@nestjs/core";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-import { ClassSerializerInterceptor, ValidationPipe } from "@nestjs/common";
+import { ClassSerializerInterceptor, NestInterceptor, ValidationPipe } from "@nestjs/common";
 import rTracer from "cls-rtracer";
 import { json } from "express";
 import { WINSTON_MODULE_NEST_PROVIDER } from "nest-winston";
@@ -19,7 +19,7 @@ async function bootstrap() {
     
     app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
     app.useGlobalPipes(new ValidationPipe({transform: true}));
-    app.useGlobalInterceptors(new ClassSerializerInterceptor(reflector));
+    const array: NestInterceptor[] = [];
     //app.useGlobalInterceptors(new ChannelInterceptor());
     //app.useGlobalFilters(new AllExceptionFilter(serviceName));
     app.use(json({limit: "10mb"}));
