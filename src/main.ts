@@ -12,16 +12,12 @@ async function bootstrap() {
     const serviceName = 'localhost:8080'
     const serviceVersion = '1'
     const app = await NestFactory.create(AppModule, {cors: true})
-    const reflector = app.get(Reflector);
     const options = new DocumentBuilder().addBearerAuth().setTitle(serviceName).setVersion(serviceVersion).build();
     SwaggerModule.setup('api', app, SwaggerModule.createDocument(app, options));
     
     
     app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
     app.useGlobalPipes(new ValidationPipe({transform: true}));
-    const array: NestInterceptor[] = [];
-    //app.useGlobalInterceptors(new ChannelInterceptor());
-    //app.useGlobalFilters(new AllExceptionFilter(serviceName));
     app.use(json({limit: "10mb"}));
     app.use(rTracer.expressMiddleware({useHeader: true, echoHeader: true}))
     
