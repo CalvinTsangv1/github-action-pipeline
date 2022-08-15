@@ -40,6 +40,7 @@ jobs:
         id: install
         run: |
           npm set audit false
+          npm i --package-lock-only
           npm ci
           npm install --save @nestjs/typeorm typeorm mysql2
 
