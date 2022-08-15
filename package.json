@@ -39,7 +39,7 @@
     "csvtojson": "^2.0.10",
     "exceljs": "^4.3.0",
     "handlebars": "4.7.7",
-    "ioredis": "4.28.2",
+    "ioredis": "4.28.5",
     "json2csv": "^5.0.7",
     "lodash": "4.17.21",
     "merge": "2.1.1",
