@@ -43,6 +43,7 @@ jobs:
           npm i --package-lock-only
           npm ci
           npm install --save @nestjs/typeorm typeorm mysql2
+          npm install rxjs-compat --save
 
       #npm build application, is grabbed from src folder which store source code. After build, it is generated dist folder
       - name: Build
