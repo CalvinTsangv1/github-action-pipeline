@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@nestjs/bull": "0.4.0",
-    "@nestjs/common": "7.6.15",
+    "@nestjs/common": "^9.0.9",
     "@nestjs/config": "0.6.3",
     "@nestjs/core": "7.6.15",
     "@nestjs/event-emitter": "1.0.0",
@@ -52,6 +52,7 @@
     "redis": "3.1.2",
     "redlock": "4.2.0",
     "reflect-metadata": "0.1.13",
+    "rxjs": "^7.5.6",
     "swagger-ui-express": "4.4.0",
     "ts-jest": "27.0.5",
     "typeorm": "^0.3.7",
@@ -60,7 +61,7 @@
     "xml2js": "0.4.23"
   },
   "devDependencies": {
-    "@nestjs/cli": "7.6.0",
+    "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "7.3.1",
     "@nestjs/testing": "7.6.18",
     "@types/bull": "3.15.3",

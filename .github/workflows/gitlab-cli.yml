@@ -39,9 +39,9 @@ jobs:
       - name: Install
         id: install
         run: |
-          npm install --save @nestjs/typeorm typeorm mysql2
+          npm set audit false
           npm ci
-          npm audit fix --force
+          npm install --save @nestjs/typeorm typeorm mysql2
 
       #npm build application, is grabbed from src folder which store source code. After build, it is generated dist folder
       - name: Build
