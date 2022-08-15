@@ -820,12 +820,12 @@
     "optional" "0.1.4"
     "tslib" "2.2.0"
 
-"@nestjs/typeorm@^9.0.1":
-  "integrity" "sha512-A2BgLIPsMtmMI0bPKEf4bmzgFPsnvHqNBx3KkvaJ7hJrBQy0OqYOb+Rr06ifblKWDWS2tUPNrAFQbZjtk3PI+g=="
-  "resolved" "https://registry.npmjs.org/@nestjs/typeorm/-/typeorm-9.0.1.tgz"
-  "version" "9.0.1"
+"@nestjs/typeorm@7.1.5":
+  "integrity" "sha512-utE1FkYM/gyCXUqw3zKYYS0YZ3DfkAnzsCx4T48cNnSDTCeWS+u3yt0FMDFjwSiQSaLrzpiSff/FaxJQvRlYow=="
+  "resolved" "https://registry.npmjs.org/@nestjs/typeorm/-/typeorm-7.1.5.tgz"
+  "version" "7.1.5"
   dependencies:
-    "uuid" "8.3.2"
+    "uuid" "8.3.1"
 
 "@nuxtjs/opencollective@0.3.2":
   "integrity" "sha512-um0xL3fO7Mf4fDxcqx9KryrB7zgRM5JSlvGN5AGkP6JLM5XEKyjeAiPbNxdXVXQ16isuAhYpvP88NgL2BGd6aA=="
@@ -6197,13 +6197,6 @@
   dependencies:
     "tslib" "^1.9.0"
 
-"rxjs@7.3.0":
-  "integrity" "sha512-p2yuGIg9S1epc3vrjKf6iVb3RCaAYjYskkO+jHIaV0IjOPlJop4UnodOoFb2xeNwlguqLYvGw1b1McillYb5Gw=="
-  "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.3.0.tgz"
-  "version" "7.3.0"
-  dependencies:
-    "tslib" "~2.1.0"
-
 "safe-buffer@^5.0.1":
   "integrity" "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="
   "resolved" "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
@@ -6939,11 +6932,6 @@
   "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   "version" "2.4.0"
-
-"tslib@~2.1.0":
-  "integrity" "sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A=="
-  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.1.0.tgz"
-  "version" "2.1.0"
 
 "tslib@2.1.0":
   "integrity" "sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A=="
