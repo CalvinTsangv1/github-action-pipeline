@@ -1,6 +1,6 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from "@nestjs/common";
-import { Observable, tap } from "rxjs";
-
+import { Observable } from "rxjs";
+import { tap } from "rxjs/operators";
 @Injectable()
 export class TimeResponseInterceptor implements NestInterceptor {
     intercept(context: ExecutionContext, next: CallHandler<any>): Observable<any> | Promise<Observable<any>> {
