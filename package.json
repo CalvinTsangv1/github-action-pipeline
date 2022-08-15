@@ -55,7 +55,7 @@
     "rxjs": "^6.0.0",
     "swagger-ui-express": "4.4.0",
     "ts-jest": "27.0.5",
-    "typeorm": "^0.3.7",
+    "typeorm": "^0.2.7",
     "uuid": "8.3.2",
     "winston": "3.3.3",
     "xml2js": "0.4.23"
