@@ -27,8 +27,8 @@ import { ClientModule } from './client/client.module';
             synchronize: true,
             autoLoadEntities: true
         }),
-        ResourceModule,
-        ClientModule
+        ClientModule,
+        ResourceModule
     ],
     providers: [
         {
