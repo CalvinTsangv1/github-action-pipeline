@@ -13,15 +13,9 @@ Middleware:
     is a function which is called before the route handler. Middleware functions have access to the request and response objects.
 
 
-project directory structure
-    src
-     |
-     |---- app.controller.spec.ts
-     |
-     |---- app.controller.ts
-     |
-     |---- app.module.ts
-     |
-     |---- app.service.ts
-     |
-     |---- main.ts
+User GuideLine:
+
+Install Application can be used SHELL script to compile.
+1. Type "sh install.sh" into github-action-pipeline directory
+2. All package and Docker Image will be compiled by SHELL script
+3. Open Browser and type "localhost:8080/api"
