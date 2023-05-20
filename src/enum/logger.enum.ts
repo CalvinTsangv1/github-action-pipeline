@@ -1,0 +1,4 @@
+export enum LoggerEnum {
+    LOCAL = "LOCAL",
+    APPLICATION_INSIGHTS = "APPLICATION_INSIGHTS"
+}

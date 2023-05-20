@@ -32,13 +32,18 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.13.x
+          node-version: 16.10.x
           cache: npm
 
       #npm install package dependencies from package-lock.json, and generate node_modules folder
       - name: Install
         id: install
-        run: npm ci
+        run: |
+          npm set audit false
+          npm i --package-lock-only
+          npm ci
+          npm install --save @nestjs/typeorm typeorm mysql2
+          npm install rxjs-compat --save
 
       #npm build application, is grabbed from src folder which store source code. After build, it is generated dist folder
       - name: Build
