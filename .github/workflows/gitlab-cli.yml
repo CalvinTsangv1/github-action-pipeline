@@ -42,7 +42,7 @@ jobs:
           npm set audit false
           npm i --package-lock-only
           npm ci
-          npm install -g node-addon-api --save
+          npm install -g node-addon-api
           npm install --save @nestjs/typeorm typeorm mysql2
           npm install rxjs-compat --save
 
