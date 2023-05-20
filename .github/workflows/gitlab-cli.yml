@@ -59,7 +59,7 @@ jobs:
           node-gyp rebuild
 
           npm i --package-lock-only --force
-          npm ci
+          npm ci --force
 
       #npm build application, is grabbed from src folder which store source code. After build, it is generated dist folder
       - name: Build
