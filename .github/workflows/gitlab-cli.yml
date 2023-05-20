@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.15.x
-          cache: npm-gyp
+          cache: npm@9.5.x
 
       #npm install package dependencies from package-lock.json, and generate node_modules folder
       - name: Install
