@@ -51,7 +51,6 @@ jobs:
           npm install -g node-addon-api --save
           npm install --save @nestjs/typeorm typeorm mysql2
           npm install rxjs-compat --save
-          npm install --force
           echo "run rebuild gyp"
           node-gyp rebuild
 
