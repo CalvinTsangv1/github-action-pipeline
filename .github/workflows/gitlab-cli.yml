@@ -28,6 +28,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.x
       
       - name: Setup node
         uses: actions/setup-node@v3
@@ -43,6 +48,8 @@ jobs:
           node-gyp -v
           echo "step gyp"
           npm install -g node-addon-api --save
+          echo "run rebuild gyp"
+          node-gyp rebuild
           npm cache clean --force
           npm set audit false
           echo "step-1"
