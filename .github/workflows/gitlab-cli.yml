@@ -41,8 +41,11 @@ jobs:
         run: |
           npm cache clean --force
           npm set audit false
+          echo "step-1"
           npm i --package-lock-only --force
+          echo "step0"
           npm ci
+          echo "step1"
           npm install -g node-addon-api
           npm install --save @nestjs/typeorm typeorm mysql2
           npm install rxjs-compat --save
