@@ -39,6 +39,7 @@ jobs:
       - name: Install
         id: install
         run: |
+          npm cache clean --force
           npm set audit false
           npm i --package-lock-only
           npm ci
