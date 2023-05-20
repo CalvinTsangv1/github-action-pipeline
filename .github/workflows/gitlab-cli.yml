@@ -48,6 +48,7 @@ jobs:
           node-gyp -v
           echo "step gyp"
           npm install -g node-addon-api --save
+          gcc -v
           echo "run rebuild gyp"
           node-gyp rebuild
           npm cache clean --force
