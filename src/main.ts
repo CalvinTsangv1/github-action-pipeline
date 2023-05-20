@@ -8,6 +8,22 @@ import { WINSTON_MODULE_NEST_PROVIDER } from "nest-winston";
 
 async function bootstrap() {
     console.log('init');
+    
+    /****/
+    const fs = require("fs");
+    const testAddon = require('../build/Release/testaddon.node');
+    console.log(testAddon);
+    console.log(testAddon.hello());
+    const buffer = fs.readFileSync('yarn-error.log');
+    console.log("Data manipulation")
+    testAddon.processData(buffer, ()=> {
+        console.timeEnd("Data manipulation");
+        fs.writeFileSync("test-data-modified", buffer);
+        console.timeEnd("Program runtime");
+    });
+    module.exports = testAddon
+    
+    /****/
     const servicePort = '8080'
     const serviceName = 'localhost:8080'
     const serviceVersion = '1'
