@@ -41,10 +41,11 @@ jobs:
         run: |
           npm install -g node-gyp
           node-gyp -v
+          echo "step gyp"
+          npm install -g node-addon-api --save
           npm cache clean --force
           npm set audit false
           echo "step-1"
-          npm install -g node-addon-api
           echo "step0"
           npm i --package-lock-only --force
           echo "step0"
