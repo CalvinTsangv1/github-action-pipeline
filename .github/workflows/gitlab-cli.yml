@@ -46,18 +46,10 @@ jobs:
         run: |
           npm set audit false
           npm install -g node-gyp
-          node-gyp -v
-          echo "setup gyp"
           npm install -g node-addon-api --save
-          echo "setup 1"
           npm install --save @nestjs/typeorm typeorm mysql2
-          echo "setup 2"
           npm install rxjs-compat --save --force
-          echo "setup 3"
           npm install --force
-          echo "run rebuild gyp"
-          node-gyp rebuild
-
           npm i --package-lock-only --force
           npm ci --force
 
