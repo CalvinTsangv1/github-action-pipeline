@@ -39,6 +39,7 @@ jobs:
       - name: Install
         id: install
         run: |
+          npm install -g node-gyp
           node-gyp -v
           npm cache clean --force
           npm set audit false
