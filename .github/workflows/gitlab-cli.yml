@@ -28,11 +28,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.x
       
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.10.x
+          node-version: 18.15.x
           cache: npm
 
       #npm install package dependencies from package-lock.json, and generate node_modules folder
@@ -40,10 +45,13 @@ jobs:
         id: install
         run: |
           npm set audit false
-          npm i --package-lock-only
-          npm ci
+          npm install -g node-gyp
+          npm install -g node-addon-api --save
           npm install --save @nestjs/typeorm typeorm mysql2
-          npm install rxjs-compat --save
+          npm install rxjs-compat --save --force
+          npm install --force
+          npm i --package-lock-only --force
+          npm ci --force
 
       #npm build application, is grabbed from src folder which store source code. After build, it is generated dist folder
       - name: Build
