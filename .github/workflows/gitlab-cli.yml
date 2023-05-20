@@ -40,10 +40,11 @@ jobs:
         id: install
         run: |
           npm cache clean --force
-          npm install -g node-addon-api
           npm set audit false
           npm i --package-lock-only
           npm ci
+          npm install -g cmake-js@5.3.2
+          npm install -g node-addon-api
           npm install --save @nestjs/typeorm typeorm mysql2
           npm install rxjs-compat --save
 
