@@ -40,3 +40,4 @@ dump.rdb
 
 mongocryptd.pid
 yarn.lock
+package-lock.json
