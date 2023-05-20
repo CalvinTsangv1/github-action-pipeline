@@ -44,6 +44,7 @@ jobs:
       - name: Install
         id: install
         run: |
+          npm set audit false
           npm install -g node-gyp
           node-gyp -v
           echo "setup gyp"
@@ -53,16 +54,9 @@ jobs:
           npm install
           echo "run rebuild gyp"
           node-gyp rebuild
-         
-          npm set audit false
-          echo "step-1"
-          echo "step0"
+
           npm i --package-lock-only --force
-          echo "step0"
           npm ci
-          echo "step1"
-          npm install --save @nestjs/typeorm typeorm mysql2
-          npm install rxjs-compat --save
 
       #npm build application, is grabbed from src folder which store source code. After build, it is generated dist folder
       - name: Build
